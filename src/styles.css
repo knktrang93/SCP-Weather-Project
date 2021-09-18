@@ -15,17 +15,6 @@ body {
   );
 }
 
-#fa,
-#ce {
-  text-decoration: none;
-  color: rgb(81, 178, 238);
-  text-align: center;
-}
-
-#clouds {
-  text-transform: capitalize;
-}
-
 button {
   height: 50px;
   border: 2px solid #8dc351;
@@ -47,12 +36,6 @@ h1 {
     3px 3px #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff;
 }
 
-.current-weather {
-  color: #ffa726;
-  font-size: 100px;
-  text-align: center;
-  padding: 10px;
-}
 h2 {
   text-align: center;
   color: #4eae53;
@@ -60,8 +43,30 @@ h2 {
   font-size: 23px;
 }
 
+.units {
+  display: block;
+  margin: 0 auto;
+  color: #949aa9;
+}
+#cel,
+#fah {
+  text-decoration: none;
+  color: #949aa9;
+}
+
+.current-weather {
+  color: #ffa726;
+  font-size: 100px;
+  text-align: center;
+  padding: 10px;
+}
+
 .row {
   margin: 10px;
+}
+
+#clouds {
+  text-transform: capitalize;
 }
 
 .prediction {
