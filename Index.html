@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script
+      src="https://kit.fontawesome.com/913dbdd293.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+<link rel="stylesheet" href="src/styles.css">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <form action="" id="input-search">
+          <input 
+            style="width: 230px; height: 50px; border: 2px solid #ffa726; border-radius: 15px; outline:none; color: #ffa726;"
+            type="text" 
+            placeholder=" Enter a city" 
+            autofocus="on" 
+            autocomplete="off"
+            id = search-text-input>
+          <input 
+          style="height: 50px; border: 2px solid #8DC351; border-radius: 15px; outline:none; background-color: #8DC351;color: white;"
+          type="submit" 
+          value="Search">
+          
+            <button>Current Location</button>
+        </form>
+        
+      
+        <h1></h1>
+   
+        <i class="fas fa-sun current-weather"></i>
+    
+        <h2></h2>
+
+        <div class="row">
+          <div class="col" class="temperature" id ="current-temp" style="font-size: 50px;text-align: right; color:#FEA726; font-weight: bolder; "></div>
+          <div class="col" style="color:#FEA726"><span id="clouds">Clouds</span><br>Humidity: <span id=humidity></span>%<br>Wind: <span id="wind"></span> mph</div>
+        </div>
+        <div class="row prediction">
+          <div class="col">TUE<br><i class="fas fa-cloud-sun p-weather"></i><br>60°F</div>
+          <div class="col">WED<br><i class="fas fa-cloud-sun p-weather"></i><br>52°F</div>
+          <div class="col">THUR<br><i class="fas fa-cloud-sun p-weather"></i><br>63°F</div>
+          <div class="col">FRI<br><i class="fas fa-sun p-weather"></i><br>66°F</div>
+          <div class="col">SAT<br><i class="fas fa-sun p-weather"></i><br>70°F</div>
+          <div class="col">SUN<br><i class="fas fa-sun p-weather"></i><br>71°F</div>
+        </div>
+        <p> Created by Trang Khong </p>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
