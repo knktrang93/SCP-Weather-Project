@@ -70,6 +70,7 @@ h2 {
   border: 2px solid rgb(255, 244, 235);
   border-radius: 15px;
   background-color: rgb(250, 249, 248);
+  margin-bottom: 40px;
 }
 .p-weather {
   color: #ffa726;
