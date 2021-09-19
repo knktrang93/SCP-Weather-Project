@@ -1,5 +1,3 @@
-// challenge 1 & 2
-
 function formatDate(date) {
   let hours = date.getHours();
   if (hours < 10) {
@@ -27,7 +25,7 @@ function formatDate(date) {
 
 function showTemperatureCondition(response) {
   document.querySelector("h1").innerHTML = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
+  temperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = `${temperature}°F`;
 
@@ -77,6 +75,19 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(getLocation);
 }
 
+function convertToCelcius(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#current-temp");
+  let celciusDegree = Math.round((temperature - 32) * (5 / 9));
+  currentTemp.innerHTML = `${celciusDegree}°C`;
+}
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = `${temperature}°F`;
+}
+
 let now = new Date();
 let dayNTime = document.querySelector("h2");
 dayNTime.innerHTML = formatDate(now);
@@ -86,5 +97,13 @@ form.addEventListener("submit", submit);
 
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
+
+let temperature = null;
+
+let celcius = document.querySelector("#cel");
+celcius.addEventListener("click", convertToCelcius);
+
+let fahrenheit = document.querySelector("#fah");
+fahrenheit.addEventListener("click", convertToFahrenheit);
 
 search("San Jose");

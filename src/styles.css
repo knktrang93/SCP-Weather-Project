@@ -54,6 +54,16 @@ h2 {
   color: #949aa9;
 }
 
+#cel:hover {
+  color: rgb(57, 141, 236);
+  font-size: 17px;
+}
+
+#fah:hover {
+  color: rgb(57, 141, 236);
+  font-size: 17px;
+}
+
 .icons {
   display: block;
   margin: 0 auto;
