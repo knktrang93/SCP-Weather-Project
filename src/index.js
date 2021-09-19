@@ -44,6 +44,16 @@ function showTemperatureCondition(response) {
   );
 }
 
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML = `<div class="row">
+            <div class="col-2">
+            <div class="weather-forecast-date">TUE</div>
+            <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="50px"/>
+            <div class="weather-forecast-temperature">66°F</div>
+          </div>`;
+}
+
 function search(city) {
   let apiKey = "cf6b50b908fa2e0baca3eed8a569a5f6";
   let unit = "imperial";
@@ -106,4 +116,5 @@ celcius.addEventListener("click", convertToCelcius);
 let fahrenheit = document.querySelector("#fah");
 fahrenheit.addEventListener("click", convertToFahrenheit);
 
+displayForecast();
 search("San Jose");
