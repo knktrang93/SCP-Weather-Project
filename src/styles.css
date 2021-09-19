@@ -54,11 +54,9 @@ h2 {
   color: #949aa9;
 }
 
-.current-weather {
-  color: #ffa726;
-  font-size: 100px;
-  text-align: center;
-  padding: 10px;
+.icons {
+  display: block;
+  margin: 0 auto;
 }
 
 .row {
