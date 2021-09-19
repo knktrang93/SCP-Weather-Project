@@ -23,6 +23,15 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiKey = "cf6b50b908fa2e0baca3eed8a569a5f6";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiURL).then(displayForecast);
+}
+
 function showTemperatureCondition(response) {
   document.querySelector("h1").innerHTML = response.data.name;
   temperature = Math.round(response.data.main.temp);
@@ -42,9 +51,12 @@ function showTemperatureCondition(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -126,5 +138,4 @@ celcius.addEventListener("click", convertToCelcius);
 let fahrenheit = document.querySelector("#fah");
 fahrenheit.addEventListener("click", convertToFahrenheit);
 
-displayForecast();
 search("San Jose");
