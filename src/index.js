@@ -45,13 +45,27 @@ function showTemperatureCondition(response) {
 }
 
 function displayForecast() {
-  let forecast = document.querySelector("#forecast");
-  forecast.innerHTML = `<div class="row">
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `
             <div class="col-2">
             <div class="weather-forecast-date">TUE</div>
             <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="50px"/>
             <div class="weather-forecast-temperature">66°F</div>
           </div>`;
+  forecastHTML =
+    forecastHTML +
+    `
+            <div class="col-2">
+            <div class="weather-forecast-date">TUE</div>
+            <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="50px"/>
+            <div class="weather-forecast-temperature">66°F</div>
+          </div>`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function search(city) {
