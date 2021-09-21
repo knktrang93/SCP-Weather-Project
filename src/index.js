@@ -82,8 +82,8 @@ function displayForecast(response) {
               forecastDay.weather[0].icon
             }@2x.png" alt="" width="50px"/>
             <div class="weather-forecast-temperature">${Math.round(
-              (forecastDay.temp.max + forecastDay.temp.min) / 2
-            )}°F </div>
+              forecastDay.temp.max
+            )}° ${Math.round(forecastDay.temp.min)}° </div>
           </div>`;
     }
   });

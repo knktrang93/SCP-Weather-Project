@@ -78,9 +78,9 @@ h2 {
 }
 
 .prediction {
-  padding: 20px 0px;
-  color: #949aa9;
-  border: 2px solid rgb(255, 244, 235);
+  padding: 15px 0px;
+  color: rgb(146, 145, 145);
+  border: 2px solid #f7e4c7;
   border-radius: 15px;
   background-color: rgb(250, 249, 248);
   margin-bottom: 40px;
