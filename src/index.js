@@ -23,6 +23,14 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  return days[day];
+}
+
 function getForecast(coordinates) {
   console.log(coordinates);
   let lat = coordinates.lat;
@@ -56,24 +64,33 @@ function showTemperatureCondition(response) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col-2">
-            <div class="weather-forecast-date">${day}</div>
-            <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="50px"/>
-            <div class="weather-forecast-temperature">66°F</div>
+            <div class="weather-forecast-date">${formatDay(
+              forecastDay.dt
+            )}</div>
+            <img src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" alt="" width="50px"/>
+            <div class="weather-forecast-temperature">${Math.round(
+              (forecastDay.temp.max + forecastDay.temp.min) / 2
+            )}°F </div>
           </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+  console.log(response.dt);
 }
 
 function search(city) {
@@ -92,7 +109,6 @@ function submit(event) {
 }
 
 function getLocation(position) {
-  console.log(position);
   let longitude = position.coords.longitude;
   let latitude = position.coords.latitude;
   let unit = "imperial";
