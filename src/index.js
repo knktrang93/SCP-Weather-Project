@@ -154,4 +154,4 @@ celcius.addEventListener("click", convertToCelcius);
 let fahrenheit = document.querySelector("#fah");
 fahrenheit.addEventListener("click", convertToFahrenheit);
 
-search("San Jose");
+search("san francisco");
